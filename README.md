@@ -2,7 +2,7 @@
 
 A simple datagram transport protocol - STP (SO2 Transport Protocol).
 
-Implemented, in the Linux kernel, a protocol called STP (SO2 Transport Protocol), at network and transport level, that works using datagrams (it is not connection-oriented and does not use flow-control elements).
+I've implemented, in the Linux kernel, a protocol called STP (SO2 Transport Protocol), at network and transport level, that works using datagrams (it is not connection-oriented and does not use flow-control elements).
 
 The STP protocol acts as a Transport layer protocol (port-based multiplexing) but operates at level 3 (Network) of the OSI stack, above the Data Link level.
 
@@ -31,7 +31,7 @@ The protocol works directly over Ethernet. The ports used are between 1 and 6553
 
 The definition of STP-related structures and macros can be found in the assignment support header.
 
-Implementation details:
+## Implementation details:
 
 A structure of type net_proto_family was defined, which provides the operation to create STP sockets. Newly created sockets are not associated with any port or interface and cannot receive / send packets. You must initialize the socket ops field with the list of operations specific to the STP family. This field refers to a structure proto_ops which must include the following functions:
 
