@@ -33,7 +33,7 @@ The definition of STP-related structures and macros can be found in the assignme
 
 ## Implementation details:
 
-A structure of type net_proto_family was defined, which provides the operation to create STP sockets. Newly created sockets are not associated with any port or interface and cannot receive / send packets. You must initialize the socket ops field with the list of operations specific to the STP family. This field refers to a structure proto_ops which must include the following functions:
+A structure of type `net_proto_family` was defined, which provides the operation to create STP sockets. Newly created sockets are not associated with any port or interface and cannot receive / send packets. You must initialize the socket ops field with the list of operations specific to the STP family. This field refers to a structure `proto_ops` which must include the following functions:
 
 - release: releases an STP socket
 - bind: associates a socket with a port (possibly also an interface) on which packets will be received / sent:
